@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * Class Todo
  * @package App\Models
- * @version December 28, 2024, 2:18 pm JST
+ * @version December 28, 2024, 2:44 pm JST
  *
  * @property integer $user_id
  * @property string $title
@@ -63,9 +63,9 @@ class Todo extends Model
         '完了'
     ];
 
-    public function getStatusName
+    public function getStatusNameAttribute(): string
     {
-        return self::$statusNames
+        return self::$statusNames[$this->status];
     }
 
 }

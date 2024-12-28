@@ -7,7 +7,7 @@ use App\Http\Requests\UpdateTodoRequest;
 use App\Repositories\TodoRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Illuminate\Support\Auth;
+use Illuminate\Support\Facades\Auth;
 use Flash;
 use Response;
 
