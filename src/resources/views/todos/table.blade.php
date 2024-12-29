@@ -2,15 +2,17 @@
     <table class="table" id="todos-table">
         <thead>
             <tr>
-                <th style="cursor: pointer"
-                    onclick="window.location='{{ $sort === 'titleAsc' ? route('todos.index', ['sort' => 'titleDesc']) : route('todos.index', ['sort' => 'titleAsc']) }}'">
-                    Title
+            <th style="cursor: pointer" onclick="window.location=`{{ $sort === 'titleAsc' }}`?
+                `{{ route('todos.index', ['queryText=' . $queryText, 'status=' . $status, 'sort=titleDesc']) }}` :
+                `{{ route('todos.index', ['queryText=' . $queryText, 'status=' . $status,  'sort=titleAsc']) }}`"
+                >Title
                     @if ($sort === 'titleAsc') <i class="fas fa-arrow-up"></i> @endif
                     @if ($sort === 'titleDesc') <i class="fas fa-arrow-down"></i> @endif
                 </th>
-                <th style="cursor: pointer"
-                    onclick="window.location='{{ $sort === 'statusAsc' ? route('todos.index', ['sort' => 'statusDesc']) : route('todos.index', ['sort' => 'statusAsc']) }}'">
-                    Status
+                <th style="cursor: pointer" onclick="window.location=`{{ $sort === 'statusAsc' }}`?
+                `{{ route('todos.index', ['queryText=' . $queryText, 'status=' . $status, 'sort=statusDesc']) }}` :
+                `{{ route('todos.index', ['queryText=' . $queryText, 'status=' . $status, 'sort=statusAsc']) }}`"
+                >Status
                     @if ($sort === 'statusAsc') <i class="fas fa-arrow-up"></i> @endif
                     @if ($sort === 'statusDesc') <i class="fas fa-arrow-down"></i> @endif
                 </th>
